@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+*{
+  margin: 0px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root{
+  --Green: rgb(94, 128, 0);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1rem;
+  position: relative;
+}
+.header{
+  height: 10vh;
+  background-color: var(--Green);
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2rem;
+}
+.footer{
+  height: 5vh;
+  font-size: 1rem;
+  position: absolute;
+  bottom: 0px;
+  background-color: var(--Green);
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.heading{
+  width: 100vw;
+  margin-top: 3rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 2rem;
+}
+.heading h1{
+  margin-bottom: 1rem;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+.emojisShow{
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+.emoji{
+  cursor: pointer;
+  font-size: 2rem;
+}
+.inputArea{
+  width: 50%;
+  height: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.meaning{
+  display: block;
+  margin-top: 2rem;
+  text-align: center;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.meaning h4{
+  display: block;
+  font-size: 2rem;
+  margin: 5px;
+  
+}
+@media screen and (max-width: 450px){
+  .heading{
+    font-size: 1rem;
+    margin-top: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+  .header{
+    font-size: 1rem;
+  }
+  .footer{
+    font-size: 0.8rem;
+  }
+  .emoji{
+    font-size: 2rem;
+    padding: 0.3rem;
+  }
+  .emojisShow{
+    width: 95%;
+  }
+  .meaning h4{
+    font-size: 1.5rem;
   }
 }
