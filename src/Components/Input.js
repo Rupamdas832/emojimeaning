@@ -19,15 +19,21 @@ export default function Input() {
     }
 
     const emojisArray = Object.keys(emojis)
+
+    const checkEmoji = (data) => {
+        const emojiMeaning = emojis[data];
+        setMeaning(emojiMeaning)
+        if(emojiMeaning === undefined){
+            setMeaning("Emoji not in DB, try emojis given below...")
+        }
+    }
     const checkChange = (event) => {
         const value = event.target.value;
-        const emojiMeaning = emojis[value];
-        setMeaning(emojiMeaning)
+        checkEmoji(value)
     }
 
-    const showMeaning = (emoji) => {
-        const emojiMeaning = emojis[emoji];
-        setMeaning(emojiMeaning)
+    const clickEmoji = (emoji) => {
+        checkEmoji(emoji)
     }
     return (
         <div className="container">
@@ -37,7 +43,7 @@ export default function Input() {
             </div>
             <div className="emojisShow">
                 {emojisArray.map((emoji,index) => {
-                    return <h3 key={index} className="emoji" onClick={() => showMeaning(emoji)}>{emoji}</h3>
+                    return <h3 key={index} className="emoji" onClick={() => clickEmoji(emoji)}>{emoji}</h3>
                 })}
             </div>
         </div>
